@@ -1,0 +1,13 @@
+.estrellas > .estrella::before
+{
+    content: "\2605";
+    width: 18px;
+    line-height: 18px;
+    text-align: center;
+    font-size: 18px;
+}
+ 
+.estrellas > .estrella
+{
+    color: #f5b301;
+}

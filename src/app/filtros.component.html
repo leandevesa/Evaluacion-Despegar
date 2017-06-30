@@ -1,0 +1,25 @@
+<div class="filtros">
+    <details open>
+        <summary>Estrellas</summary>
+        <ul class="filtro-estrellas">
+            <li>
+                <input id="allStars" [checked]="estrellasSeleccionadas['todas']" (change)="clickEstrella('todas', $event)" type="checkbox" />
+                <label for="allStars">Todas las estrellas</label>
+                    <span class="cantidad-estrellas azul">
+                        {{ hoteles.length }}
+                    </span>
+            </li>
+            <li *ngFor="let j of CANT_ESTRELLAS | forNumberWithNumbers">
+                <div class="estrellas">
+                    <input id="cincoEstrellas" [checked]="estrellasSeleccionadas[CANT_ESTRELLAS + 1 - j]" (change)="clickEstrella(CANT_ESTRELLAS + 1 - j, $event)" type="checkbox" />
+                    <span 
+                        *ngFor="let i of CANT_ESTRELLAS + 1 - j | forNumber"
+                        class="estrella"></span>
+                    <span class="cantidad-estrellas">
+                        {{ hoteles | estrellasPorHotel: CANT_ESTRELLAS + 1 - j }}
+                    </span>
+                </div>
+            </li>
+        </ul>
+    </details>
+</div>

@@ -1,0 +1,234 @@
+body {
+    background-color: lightgray;
+}
+
+.container {
+    padding: 10px;
+}
+
+.row.content {
+    height: 260px;
+    margin-bottom: 15px;
+}
+
+.content-left {
+    background-color: white;
+    padding: 10px;
+    height: 100%;
+}
+
+.content-right {
+    background-color: #FFF157;
+    height: 100%;
+}
+
+.search {
+    background-color: #FFF157;
+}
+
+.full-block {
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 10px;
+}
+
+.search-title {
+    color: #2D72E1;
+    font-size: 20px;
+}
+
+.search-descr {
+    color: #666664;
+    font-size: 16px;
+}
+
+.search-input {
+    padding: 8px 10px;
+    width: 100%;
+    border: 1px solid #FFF;
+    border-radius: 4px;
+}
+
+select {
+    cursor: pointer;
+}
+
+.search > div {
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.cantidad-estrellas {
+    background: white;
+    border: 1px solid lightgray;
+    margin-right: 15px;
+    color: black;
+    width: 25px;
+    height: 25px;
+    font-size: 11px;
+    display: block;
+    line-height: 2.3;
+    text-align: center;
+    float: right;
+}
+
+.puntaje {
+    background: #95c428;
+    color: white;
+    width: 25px;
+    height: 25px;
+    font-size: 11px;
+    display: block;
+    line-height: 2.3;
+    text-align: center;
+    position: absolute;
+}
+
+.nombre-hotel {
+    margin-left: 35px;
+}
+
+.gris {
+    color: #AAA;
+}
+
+.verde {
+    color: #39c15c;
+}
+
+.verde-fuerte {
+    color: #5bda7c;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.rojo {
+    color: #EB1B00;
+}
+
+.negro {
+    color: black;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    color: white;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 17px;
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.2);
+}
+
+.button:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.2s ease-out;
+}
+
+.button:active {
+    box-shadow: none;
+}
+
+.button.blue {
+    background-color: #0050d0;
+}
+
+.button.blue:hover {
+    background-color: rgba(0,80,208,0.7);
+}
+
+.button.blue:active {
+    background-color: #2d72e1;
+}
+
+.button.red {
+    background-color: #EB1B00;;
+}
+
+.button.red:hover {
+    background-color: #F95F5D;
+}
+
+.button.red:active {
+    background-color: #EB1B00;
+}
+
+.button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.button.disabled:active {
+    box-shadow: inset 0 -4px 0 rgba(0,0,0,0.2);
+}
+
+.detalle-compra {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+.filtro-estrellas {
+    list-style-type: none;
+    margin: 10px 0px 0px -15px;
+}
+
+.filtro-estrellas > li {
+    height: 37px;
+}
+
+.filtros {
+    background: white;
+    margin-top: 10px;
+    margin-bottom: 18px;
+}
+
+.detalle-compra li {
+    margin-top: 6px;
+}
+
+.centavos {
+    position: relative;
+    vertical-align: top;
+    top: 7px;
+    font-size: 10px;
+}
+
+.stroke {
+    color: red;
+    text-decoration: line-through;
+}
+
+.detalle-compra > .precio {
+    font-size: 28px;
+}
+
+summary:hover {
+    cursor: pointer;
+}
+
+summary {
+    font-size: 18px;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+    padding: 5px 0px 5px 10px;
+}
+
+.azul {
+    background-color: #2D72E1;
+}
+
+.cantidad-estrellas.azul {
+    color: white;
+}
+
+.error-datos {
+    margin-top: 10px;
+    color:red;
+    font-style: italic;
+}

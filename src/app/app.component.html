@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5 col-md-4">
+            <datos-hotel
+                (clickBusqueda)="realizarBusqueda($event)"></datos-hotel>
+            <filtros
+                [hoteles]="hoteles"
+                (hotelesFiltrados)="onFiltrosChanged($event)"></filtros>
+        </div>
+        <div class="col-sm-7 col-md-8">
+            <lista-hoteles
+                [hoteles]="hoteles"
+                [filtros]="filtros"
+                [estaCargando]="estaCargando"></lista-hoteles>
+        </div>
+    </div>
+</div>

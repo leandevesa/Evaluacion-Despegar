@@ -1,0 +1,93 @@
+<form
+  [formGroup]="form">
+    <div class="search full-block">
+        
+        <span class="search-title">
+            Hoteles
+        </span>
+
+        <div>
+            <div>
+                <span class="search-descr">
+                    ¿Dónde quieres ir?
+                </span>
+
+                <input formControlName="destino" type="text" class="search-input" placeholder="Ingresa una ciudad, hotel, atracción">
+                <div *ngIf="!form.controls.destino.valid" class="error-datos">
+                    Este campo es obligatorio
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <span class="search-descr">
+                ¿En qué fecha?
+            </span>
+            <div [formGroup]="fechasGroup">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <input type="text" formControlName="entrada" class="search-input" placeholder="Entrada">
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" formControlName="salida" class="search-input" placeholder="Salida">
+                    </div>
+                    <div *ngIf="!fechasGroup.controls.valid" class="col-xs-12 error-datos">
+                        {{ fechasGroup.errors?.msg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div [formGroup]="personasYCuartosGroup">
+            <div class="row">
+                <div class="col-xs-6">
+                    <span class="search-descr">
+                        Habitaciones
+                    </span>                    
+                    <select class="search-input" formControlName="habitaciones">
+                        <option 
+                            *ngFor="let opcion of opcionesHabitaciones"
+                            value="{{ opcion }}">{{ opcion }}</option>
+                    </select>
+                </div>
+                <div class="col-xs-6 col-xs-offset-6">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <span class="search-descr">
+                        Adultos
+                    </span>                    
+                    <select class="search-input" formControlName="adultos">
+                        <option 
+                            *ngFor="let opcion of opcionesPersonas"
+                            value="{{ opcion }}">{{ opcion }}</option>
+                    </select>
+                </div>
+                <div class="col-xs-6">
+                    <span class="search-descr">
+                        Menores
+                    </span>                    
+                    <select class="search-input" formControlName="menores">
+                        <option 
+                            *ngFor="let opcion of opcionesPersonas"
+                            value="{{ opcion }}">{{ opcion }}</option>
+                    </select>
+                </div>
+                <div *ngIf="!personasYCuartosGroup.controls.valid" class="col-xs-12 error-datos">
+                    {{ personasYCuartosGroup.errors?.msg }}
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <a class="button blue" (click)="getHotels()" *ngIf="form.valid && fechasGroup.valid && personasYCuartosGroup.valid">
+                Buscar
+            </a>
+            <a class="button disabled" *ngIf="!form.valid || !fechasGroup.valid || !personasYCuartosGroup.valid">
+                Buscar
+            </a>
+        </div>
+    </div>
+</form>

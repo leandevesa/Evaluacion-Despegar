@@ -1,0 +1,98 @@
+<div 
+    *ngFor="let hotel of hoteles | filtroHoteles: filtros"
+    class="row content" >
+
+    <div class="col-xs-8 col-md-9 content-left">
+        <div>
+            <span class="puntaje">
+                {{ hotel.rating }}
+            </span>
+            <h3 class="nombre-hotel">
+                {{ hotel.name }}
+            </h3>
+        </div>
+        <div class="estrellas">
+            <span 
+                *ngFor="let i of hotel.stars | forNumber"
+                class="estrella"></span>
+            <span class="gris">
+                {{ hotel.distanceFromDowntown | distancia }}
+            </span>
+        </div>
+        <div>
+            <span class="verde">
+                {{ hotel.recomendations }} lo recomendó
+            </span>
+        </div>
+        <div>
+            <span 
+                *ngIf="(hotel.availableRooms)"
+                class="rojo">
+                {{ hotel.availableRooms | cantidadHabitaciones }}
+            </span>
+        </div>
+        <div>
+            <span 
+                *ngIf="(hotel.availabilityTime)"
+                class="gris">
+                {{ hotel.availabilityTime | availabilityTime }}
+            </span>
+        </div>
+    </div>
+    <div class="col-xs-4 col-md-3 content-right">
+        <div class="text-center">
+            <ul class="detalle-compra">
+                <li 
+                    *ngIf="(hotel.freeCancelation)"
+                    class="verde-fuerte">
+                    Cancele gratis
+                </li>
+                <li>
+                    Habitación por noche
+                </li>
+                <li class="gris">
+                    Impuestos y tasas no incluidos
+                </li>
+                <li
+                    *ngIf="(hotel.oldPrice)">
+                    <span class="stroke">
+                        <span class="negro">{{ hotel.oldPrice | precioParteEntera }}</span>
+                        <sub class="negro centavos">{{ hotel.oldPrice | precioParteDecimal }}</sub>
+                    </span>
+                </li>
+                <li class="precio">
+                    <span>{{ hotel.price | precioParteEntera }}</span>
+                    <sub class="centavos">{{ hotel.price | precioParteDecimal }}</sub>
+                </li>
+                <li>
+                    <a class="button red">
+                        Ver detalle
+                    </a>
+                </li>
+                <li>
+                    Paga al hotel o hasta en 50 cuotas
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div 
+    *ngIf="((hoteles | filtroHoteles: filtros).length === 0) && !estaCargando"
+    class="row content" >
+    <div class="col-xs-12 content-left">
+        <div>
+            <h3 class="nombre-hotel">No hay hoteles disponibles, por favor pruebe con otros criterios de busqueda</h3>
+        </div>
+    </div>
+</div>
+
+<div 
+    *ngIf="estaCargando"
+    class="row content" >
+    <div class="col-xs-12 content-left">
+        <div>
+            <h3 class="nombre-hotel">Buscando hoteles...</h3>
+        </div>
+    </div>
+</div>
